@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var recipeDataList = RecipeData()
+    @State var inputText = ""
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            TextField("キーワードを入力してください",text:$inputText,onCommit:{
+                recipeDataList.searchRecipe(keyword: inputText)
+            })
+        }
     }
 }
 
