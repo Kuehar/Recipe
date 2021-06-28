@@ -12,7 +12,7 @@ import Foundation
 class RecipeData: ObservableObject{
     
     struct ResultJson:Codable {
-        struct item:Codable {
+        struct Item:Codable {
             let name: String?
             let url: URL?
             let image:URL?
