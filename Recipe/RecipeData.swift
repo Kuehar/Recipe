@@ -6,7 +6,16 @@
 //
 
 import Foundation
+import UIKit
 
+
+// JSONデータ
+struct  RecipeItem:Identifiable {
+    let id = UUID()
+    let name: String
+    let link: URL
+    let image: UIImage
+}
 
 // レシピ検索用クラス
 class RecipeData: ObservableObject{
@@ -19,6 +28,8 @@ class RecipeData: ObservableObject{
         }
         let item: [Item]?
     }
+    
+    @Published var RecipeList: [RecipeItem] = []
     
     func searchRecipe(keyword:String){
         print(keyword)
